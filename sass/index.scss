@@ -1,0 +1,124 @@
+@import "compass/reset";
+@import "compass/css3";
+
+@mixin Text3D($color){
+	@include text-shadow($color 1px 1px 0,
+	 $color 2px 2px 0,
+	 $color 3px 3px 0,
+	 $color 4px 4px 0,
+	 $color 5px 5px 0,
+	 $color 6px 6px 0,
+	 $color 7px 7px 0);
+}
+
+@mixin Box3D($color,$isInset){
+	@if $isInset{
+		@include box-shadow($color 1px 1px 0 inset,
+		 $color 2px 2px 0 inset,
+		 $color 3px 3px 0 inset,
+		 $color 4px 4px 0 inset);
+	}@else{
+		@include box-shadow($color 1px 1px 0,
+		 $color 2px 2px 0,
+		 $color 3px 3px 0,
+		 $color 4px 4px 0);
+	}
+}
+
+$bgcolor:#6ae3b6;
+
+a:link,a:visited{
+	color: white;
+	text-decoration: none;
+}
+
+body{
+	position: relative;
+	background-color: $bgcolor;
+}
+h1{
+	margin: 50px 0;
+	color: white;
+	font-size: 60px;
+	font-family: 'Ubuntu';
+	text-align: center;
+	@include Text3D(darken($bgcolor,30%));
+}
+.slideWrapper{
+	position: relative;
+	width: 30%;
+	padding-top: 30%;
+	margin: auto;
+	overflow: hidden;
+}
+ul{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	>li{
+		position: relative;
+		display: block;
+		float: left;
+		>img{
+			width: 100%;
+			@include background-size(cover);
+		}
+	}
+}
+.pageController{
+	position: absolute;
+	width: 30%;
+	padding-top: 30%;
+	width: 100%;
+	>a{
+		font-size: 84px;
+		font-family: 'Londrina Solid';
+		@include Text3D(darken($bgcolor,30%));
+	}
+	>a:active{
+		color: lighten($bgcolor,30%);
+		@include Text3D(darken($bgcolor,40%));
+	}
+	>a.prev{
+		position: absolute;
+		top: 40%;
+		left: 35%;
+		margin-left: -54px;
+	}
+	>a.next{
+		position: absolute;
+		top: 40%;
+		right: 35%;
+		margin-right: -50px;
+	}
+}
+.pagination{
+	text-align: center;
+	>a{
+		position: relative;
+		display: inline-block;
+		padding: 5px 10px;
+		margin: 2px;
+		background-color: darken($bgcolor,15%);
+		@include Box3D(darken($bgcolor,30%),false);
+	}
+	>a:active{
+		top: 4px;
+		left: 2px;
+		padding: 8px 11px 6px 13px;
+		margin-right: 0px;
+		margin-left: 0px;
+		background-color: darken($bgcolor,35%);
+		@include Box3D(darken($bgcolor,50%),true);
+	}
+	>a.active{
+		top: 4px;
+		left: 2px;
+		padding: 8px 11px 6px 13px;
+		margin-right: 0px;
+		margin-left: 0px;
+		background-color: darken($bgcolor,25%);
+		@include Box3D(darken($bgcolor,40%),true);
+	}
+}

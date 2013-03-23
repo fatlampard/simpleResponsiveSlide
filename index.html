@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>understanding bootstrap tooltip</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="js/simpleResponsiveSlide.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.slideWrapper').simpleResponsiveSlide({
+					nextControl: 'a.next',
+					prevControl: 'a.prev',
+					pagination: '.pagination',
+					delay: 100
+				});
+			});
+		</script>
+		<link href='http://fonts.googleapis.com/css?family=Londrina+Solid|Ubuntu:700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	</head>
+	<body>
+		<h1>SimpleResponsiveSlide.js</h1>
+		<div class="slideOutWrapper">
+			<div class="pageController">
+				<a href="#" class="prev">&lt;</a>
+				<a href="#" class="next">&gt;</a>
+			</div>
+			<div class="slideWrapper">
+				<ul>
+					<li><img src="images/image01.jpg"></li>
+					<li><img src="images/image02.jpg"></li>
+					<li><img src="images/image03.jpg"></li>
+					<li><img src="images/image04.jpg"></li>
+					<li><img src="images/image05.jpg"></li>
+					<li><img src="images/image06.jpg"></li>
+				</ul>
+			</div>
+		</div>
+		<div class="pagination">
+			<a class="active" href="#">1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+			<a href="#">4</a>
+			<a href="#">5</a>
+			<a href="#">6</a>
+		</div>
+	</body>
+</html>

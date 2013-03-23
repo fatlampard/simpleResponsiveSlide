@@ -1,0 +1,165 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+  background-color: #6ae3b6;
+}
+
+h1 {
+  margin: 50px 0;
+  color: white;
+  font-size: 60px;
+  font-family: 'Ubuntu';
+  text-align: center;
+  text-shadow: #1c986a 1px 1px 0, #1c986a 2px 2px 0, #1c986a 3px 3px 0, #1c986a 4px 4px 0, #1c986a 5px 5px 0, #1c986a 6px 6px 0, #1c986a 7px 7px 0;
+}
+
+.slideWrapper {
+  position: relative;
+  width: 30%;
+  padding-top: 30%;
+  margin: auto;
+  overflow: hidden;
+}
+
+ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+ul > li {
+  position: relative;
+  display: block;
+  float: left;
+}
+ul > li > img {
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pageController {
+  position: absolute;
+  width: 30%;
+  padding-top: 30%;
+  width: 100%;
+}
+.pageController > a {
+  font-size: 84px;
+  font-family: 'Londrina Solid';
+  text-shadow: #1c986a 1px 1px 0, #1c986a 2px 2px 0, #1c986a 3px 3px 0, #1c986a 4px 4px 0, #1c986a 5px 5px 0, #1c986a 6px 6px 0, #1c986a 7px 7px 0;
+}
+.pageController > a:active {
+  color: #ebfbf5;
+  text-shadow: #146d4c 1px 1px 0, #146d4c 2px 2px 0, #146d4c 3px 3px 0, #146d4c 4px 4px 0, #146d4c 5px 5px 0, #146d4c 6px 6px 0, #146d4c 7px 7px 0;
+}
+.pageController > a.prev {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  margin-left: -54px;
+}
+.pageController > a.next {
+  position: absolute;
+  top: 40%;
+  right: 35%;
+  margin-right: -50px;
+}
+
+.pagination {
+  text-align: center;
+}
+.pagination > a {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 2px;
+  background-color: #2ad796;
+  -webkit-box-shadow: #1c986a 1px 1px 0, #1c986a 2px 2px 0, #1c986a 3px 3px 0, #1c986a 4px 4px 0;
+  -moz-box-shadow: #1c986a 1px 1px 0, #1c986a 2px 2px 0, #1c986a 3px 3px 0, #1c986a 4px 4px 0;
+  box-shadow: #1c986a 1px 1px 0, #1c986a 2px 2px 0, #1c986a 3px 3px 0, #1c986a 4px 4px 0;
+}
+.pagination > a:active {
+  top: 4px;
+  left: 2px;
+  padding: 8px 11px 6px 13px;
+  margin-right: 0px;
+  margin-left: 0px;
+  background-color: #18825b;
+  -webkit-box-shadow: #0c422e 1px 1px 0 inset, #0c422e 2px 2px 0 inset, #0c422e 3px 3px 0 inset, #0c422e 4px 4px 0 inset;
+  -moz-box-shadow: #0c422e 1px 1px 0 inset, #0c422e 2px 2px 0 inset, #0c422e 3px 3px 0 inset, #0c422e 4px 4px 0 inset;
+  box-shadow: #0c422e 1px 1px 0 inset, #0c422e 2px 2px 0 inset, #0c422e 3px 3px 0 inset, #0c422e 4px 4px 0 inset;
+}
+.pagination > a.active {
+  top: 4px;
+  left: 2px;
+  padding: 8px 11px 6px 13px;
+  margin-right: 0px;
+  margin-left: 0px;
+  background-color: #21ad79;
+  -webkit-box-shadow: #146d4c 1px 1px 0 inset, #146d4c 2px 2px 0 inset, #146d4c 3px 3px 0 inset, #146d4c 4px 4px 0 inset;
+  -moz-box-shadow: #146d4c 1px 1px 0 inset, #146d4c 2px 2px 0 inset, #146d4c 3px 3px 0 inset, #146d4c 4px 4px 0 inset;
+  box-shadow: #146d4c 1px 1px 0 inset, #146d4c 2px 2px 0 inset, #146d4c 3px 3px 0 inset, #146d4c 4px 4px 0 inset;
+}
