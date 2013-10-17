@@ -7,16 +7,23 @@
 			delay: 100,
 		},options||{});
 		var srs=this;
+		var slideWidth=0;
 		//initialize
 		settings.currentPage=0;
 		settings.slideList$ = this.children('ul');
 		settings.totalPage=settings.slideList$.children('li').length;
 		settings.slideList$.children('li').first().clone().appendTo(settings.slideList$);
-		settings.slideList$.css('width',(settings.totalPage+1)*100+'%')
-		settings.slideList$.children('li').each(function(n){ 
-			$(this).data('slideIndex',n);
-		}).css('width',Math.round(100/(settings.totalPage+1)*1000)/1000+'%');
-
+		$( window ).resize(changeSlideSize);
+		changeSlideSize();
+		function changeSlideSize(){
+			slideWidth=settings.slideList$.parent().width();
+			settings.slideList$.css('width',(settings.totalPage+1)*slideWidth);
+			settings.slideList$.children('li').each(function(n){ 
+				$(this).data('slideIndex',n);
+			}).css('width',slideWidth);
+			settings.slideList$.css('left',settings.currentPage*(-1)*slideWidth);
+		}
+		
 		$(settings.pagination).children('a').each(function(n){
 			$(this).data('targetIndex',n);
 		}).click(function(event){
@@ -41,14 +48,14 @@
 		srs.srsPrev=function(){
 			if(settings.currentPage==0){
 				settings.currentPage=settings.totalPage;
-				settings.slideList$.css('left',settings.currentPage*(-100)+'%');
+				settings.slideList$.css('left',settings.currentPage*(-1)*slideWidth);
 			}
 			settings.currentPage--;
 			slideTo(settings.currentPage);
 		}
 		function slideTo(slideIndex){
 			settings.slideList$.animate({
-				left: slideIndex*(-100)+'%'
+				left: slideIndex*(-1)*slideWidth
 			},settings.delay,function(){
 				if(slideIndex>=settings.totalPage){
 					$(this).css('left','0');
